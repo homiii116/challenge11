@@ -28,4 +28,4 @@ buttonOpen.addEventListener('click', function() {
 // モーダルを閉じる関数
 
 
-// モーダル以外がクリックされた時に閉じる関数//
+// モーダル以外がクリックされた時に閉じる関数
