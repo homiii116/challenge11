@@ -7,25 +7,47 @@ const buttonOpen = document.getElementById('modalOpen');
 
 
 // 閉じるボタン取得
-const buttonClose = document.getElementsByClassName('modalClose');
+const buttonClose = document.getElementsByClassName('modalClose')[0];
 
 
 // クリックで開くイベントリスナー
-buttonOpen.addEventListener('click', function() {
-  modal.style.display = 'block';
-})
+// buttonOpen.addEventListener('click', function() {
+//   modal.style.display = 'block';
+// })
 
-// クリックで閉じるイベントリスナー
+// // クリックで閉じるイベントリスナー
+// buttonClose.addEventListener('click', function() {
+//   modal.style.display = 'none';
+// })
 
+// // モーダル以外の場所クリックのイベントリスナー
+// modal.addEventListener('click', function() {
+//   modal.style.display = 'none';
+// })
 
+// クリックで開くイベントリスナー
+buttonOpen.addEventListener('click', modalOpen);
 
-// モーダル以外の場所クリックのイベントリスナー
+// // クリックで閉じるイベントリスナー
+buttonClose.addEventListener('click', modalClose);
 
+// // モーダル以外の場所クリックのイベントリスナー
+addEventListener('click', outsideClose);
 
 // モーダルオープンの関数
-
+function modalOpen() {
+  modal.style.display = 'block';
+} 
 
 // モーダルを閉じる関数
-
+function modalClose() {
+  modal.style.display = 'none';
+}
 
 // モーダル以外がクリックされた時に閉じる関数
+function outsideClose(e) {
+  if (e.target == modal) {
+    modal.style.display = 'none';
+  } 
+  console.log(e.target);
+}
